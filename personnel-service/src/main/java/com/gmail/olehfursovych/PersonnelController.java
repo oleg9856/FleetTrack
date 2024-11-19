@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/v1/personnel")
 public record PersonnelController(PersonnelService personnelService) {
 
-    @PostMapping()
+    @PostMapping("/registration")
     public void registerPersonnel(@RequestBody PersonnelRegistrationRequest personnelRequest) {
         log.info("new person registration: {}", personnelRequest);
         personnelService.registerPersonnel(personnelRequest);

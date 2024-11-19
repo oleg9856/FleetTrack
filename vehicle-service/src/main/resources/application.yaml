@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: personnel-service
+    name: vehicle-service
   datasource:
     username: 'postgres'
     url: 'jdbc:postgresql://localhost:5434/fleet-track-db'
