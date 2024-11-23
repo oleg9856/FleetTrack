@@ -1,4 +1,4 @@
-package com.gmail.olehfursovych;
+package com.gmail.olehfursovych.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,29 +6,27 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Data
 @Builder
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 @Table(name = "service_history")
 public class ServiceHistory {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "history_id")
-    private int historyId;
+    private Long historyId;
 
     @ManyToOne
     @JoinColumn(name = "personnel_id")
-    private Person personnel;
+    private Personnel personnel;
 
     @Column(name = "service_date")
-    @Temporal(TemporalType.DATE)
-    private Date serviceDate;
+    private LocalDate serviceDate;
 
-    @Column(name = "notes")
     private String notes;
 }

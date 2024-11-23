@@ -1,4 +1,4 @@
-package com.gmail.olehfursovych.service.exeptions;;
+package com.gmail.olehfursovych.service.exceptions;;
 
 public class VehicleNotFoundException extends RuntimeException {
     private String message;

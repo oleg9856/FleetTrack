@@ -20,11 +20,10 @@ public class VehicleDTO {
     private String model;
     private Integer year;
     private String vehicleType;
-    private Vehicle.Status status = Vehicle.Status.ACTIVE;
+    private Vehicle.VehicleStatus status = Vehicle.VehicleStatus.Active;
 
-    public enum Status {
-        ACTIVE,
-        MAINTENANCE,
-        INACTIVE
+
+    public enum VehicleStatus {
+        Active, Maintenance, Inactive
     }
 }

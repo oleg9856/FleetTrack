@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Data
 @Builder
 @Entity(name = "PersonnelEntity")
@@ -33,6 +35,23 @@ public class Personnel {
     private String email;
 
     @OneToOne
-    @JoinColumn(name = "vehicle_id", unique = true)
-    private Vehicle vehicle;
+    @JoinColumn(name = "assigned_vehicle", unique = true)
+    private Vehicle assignedVehicle;
+
+    @OneToMany(mappedBy = "personnel")
+    private Set<MaintenanceRecord> performedMaintenances;
+
+    @OneToMany(mappedBy = "personnel")
+    private Set<VehicleAssignment> vehicleAssignments;
+
+    @OneToMany(mappedBy = "personnel")
+    private Set<ServiceHistory> serviceHistory;
+
+    @ManyToMany
+    @JoinTable(
+            name = "personnel_roles",
+            joinColumns = @JoinColumn(name = "personnel_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles;
 }

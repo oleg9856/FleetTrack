@@ -1,4 +1,4 @@
-package com.gmail.olehfursovych;
+package com.gmail.olehfursovych.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,20 +6,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @Builder
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 @Table(name = "vehicle_assignments")
 public class VehicleAssignment {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "assignment_id")
-    private int assignmentId;
+    private Long assignmentId;
 
     @ManyToOne
     @JoinColumn(name = "vehicle_id")
@@ -27,14 +26,11 @@ public class VehicleAssignment {
 
     @ManyToOne
     @JoinColumn(name = "personnel_id")
-    private Person personnel;
+    private Personnel personnel;
 
     @Column(name = "assignment_date")
-    @Temporal(TemporalType.DATE)
-    private Date assignmentDate;
+    private LocalDate assignmentDate;
 
     @Column(name = "return_date")
-    @Temporal(TemporalType.DATE)
-    private Date returnDate;
-
+    private LocalDate returnDate;
 }

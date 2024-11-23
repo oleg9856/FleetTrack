@@ -2,7 +2,7 @@ package com.gmail.olehfursovych.service;
 
 import com.gmail.olehfursovych.entity.Vehicle;
 import com.gmail.olehfursovych.repository.VehicleRepository;
-import com.gmail.olehfursovych.service.exeptions.VehicleNotFoundException;
+import com.gmail.olehfursovych.service.exceptions.VehicleNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

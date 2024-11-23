@@ -1,5 +1,4 @@
-package com.gmail.olehfursovych;
-
+package com.gmail.olehfursovych.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,33 +6,30 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDate;
 
+@Entity
+@Table(name = "maintenance_records")
 @Data
 @Builder
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "maintenance_records")
 public class MaintenanceRecord {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "record_id")
-    private int recordId;
+    private Long recordId;
 
     @ManyToOne
     @JoinColumn(name = "vehicle_id")
     private Vehicle vehicle;
 
     @Column(name = "maintenance_date")
-    @Temporal(TemporalType.DATE)
-    private Date maintenanceDate;
+    private LocalDate maintenanceDate;
 
-    @Column(name = "description")
     private String description;
 
     @ManyToOne
     @JoinColumn(name = "performed_by")
-    private Person personnel;
+    private Personnel personnel;
 }

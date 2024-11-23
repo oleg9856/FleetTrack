@@ -2,7 +2,7 @@ package com.gmail.olehfursovych.service;
 
 import com.gmail.olehfursovych.entity.Personnel;
 import com.gmail.olehfursovych.repository.PersonnelRepository;
-import com.gmail.olehfursovych.service.exeptions.PersonNotFoundException;
+import com.gmail.olehfursovych.service.exceptions.PersonNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Data
 @Builder
 @Entity(name = "VehicleEntity")
@@ -13,45 +15,41 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "vehicles")
 public class Vehicle {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vehicle_id")
     private Long vehicleId;
 
-    @Column(name = "license_plate",
-            unique = true,
-            nullable = false,
-            length = 20)
+    @Column(name = "license_plate", nullable = false, unique = true)
     private String licensePlate;
 
-    @Column(name = "make",
-            length = 50)
     private String make;
-
-    @Column(name = "model",
-            length = 50)
     private String model;
-
     private Integer year;
 
-    @Column(name = "vehicle_type",
-            length = 50)
+    @Column(name = "vehicle_type")
     private String vehicleType;
 
-
-    @Column(name = "status", length = 20, nullable = false)
+    @Column(name = "status")
     @Enumerated(EnumType.STRING)
-    private Status status = Status.ACTIVE;
+    private VehicleStatus status = VehicleStatus.Active;
 
-    public enum Status {
-        ACTIVE,
-        MAINTENANCE,
-        INACTIVE
+    @OneToOne(mappedBy = "assignedVehicle")
+    private Personnel assignedPersonnel;
+
+    @OneToMany(mappedBy = "vehicle")
+    private Set<MaintenanceRecord> maintenanceRecords;
+
+    @OneToMany(mappedBy = "vehicle")
+    private Set<VehicleAssignment> vehicleAssignments;
+
+    @OneToMany(mappedBy = "vehicle")
+    private Set<Logbook> logEntries;
+
+    public enum VehicleStatus {
+        Active, Maintenance, Inactive
     }
 
-    @OneToOne(mappedBy = "vehicle")
-    private Personnel personnel;
 
 
 }
