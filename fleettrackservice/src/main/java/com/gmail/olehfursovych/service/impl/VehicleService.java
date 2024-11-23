@@ -1,4 +1,4 @@
-package com.gmail.olehfursovych.service;
+package com.gmail.olehfursovych.service.impl;
 
 import com.gmail.olehfursovych.entity.Vehicle;
 import com.gmail.olehfursovych.repository.VehicleRepository;
@@ -54,7 +54,7 @@ public class VehicleService {
         return vehicleRepository.save(vehicle);
     }
 
-    public Vehicle updateVehicleStatus(long id, Vehicle.Status status) {
+    public Vehicle updateVehicleStatus(long id, Vehicle.VehicleStatus status) {
         Vehicle vehicle = vehicleRepository.findById(id).orElseThrow(() -> {
             log.error("Vehicle with id {} not found", id);
             return new VehicleNotFoundException("Vehicle with id " + id + " not found");

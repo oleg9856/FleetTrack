@@ -1,7 +1,8 @@
-package com.gmail.olehfursovych.service;
+package com.gmail.olehfursovych.service.impl;
 
 import com.gmail.olehfursovych.entity.MaintenanceRecord;
 import com.gmail.olehfursovych.repository.MaintenanceRecordRepository;
+import com.gmail.olehfursovych.service.IMaintenanceRecordService;
 import com.gmail.olehfursovych.service.exceptions.MaintenanceRecordNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

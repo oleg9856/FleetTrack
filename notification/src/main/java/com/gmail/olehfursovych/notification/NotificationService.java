@@ -1,7 +1,7 @@
 package com.gmail.olehfursovych.notification;
 
 
-import com.amigoscode.clients.notification.NotificationRequest;
+import com.gmail.olehfursovych.client.notification.NotificationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package com.gmail.olehfursovych.notification;
 
-import com.amigoscode.clients.notification.NotificationRequest;
+import com.gmail.olehfursovych.client.notification.NotificationRequest;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,7 +1,7 @@
 package com.gmail.olehfursovych.controller;
 
 import com.gmail.olehfursovych.entity.Vehicle;
-import com.gmail.olehfursovych.service.VehicleService;
+import com.gmail.olehfursovych.service.impl.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

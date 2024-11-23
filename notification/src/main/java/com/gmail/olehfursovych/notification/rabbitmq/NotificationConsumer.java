@@ -1,6 +1,6 @@
 package com.gmail.olehfursovych.notification.rabbitmq;
 
-import com.amigoscode.clients.notification.NotificationRequest;
+import com.gmail.olehfursovych.client.notification.NotificationRequest;
 import com.gmail.olehfursovych.notification.NotificationService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

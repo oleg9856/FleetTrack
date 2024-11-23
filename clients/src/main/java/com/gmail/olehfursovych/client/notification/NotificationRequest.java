@@ -1,4 +1,5 @@
-package com.amigoscode.clients.notification;
+package com.gmail.olehfursovych.client.notification;
+
 
 public record NotificationRequest(
         Integer toCustomerId,
