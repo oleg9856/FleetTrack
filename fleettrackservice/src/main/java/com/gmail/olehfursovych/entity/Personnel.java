@@ -27,6 +27,9 @@ public class Personnel {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "password")
+    private String password;
+
     private String position;
 
     @Column(name = "phone_number")

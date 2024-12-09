@@ -1,16 +1,24 @@
 package com.gmail.olehfursovych.entity;
 
 
+import lombok.*;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "logbook")
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Logbook {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "log_id")
+    @NotNull
     private Long logId;
 
     @ManyToOne

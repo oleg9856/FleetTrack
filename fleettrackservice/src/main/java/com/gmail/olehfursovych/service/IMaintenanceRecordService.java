@@ -10,4 +10,5 @@ public interface IMaintenanceRecordService {
     void saveMaintenanceRecord(MaintenanceRecord maintenanceRecord);
     void deleteMaintenanceRecord(long id);
     MaintenanceRecord updateMaintenanceRecord(long id, MaintenanceRecord updatedMaintenanceRecord);
+
 }

@@ -24,7 +24,7 @@ public class VehicleController {
         return vehicleService.getAllVehicles();
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public void saveVehicle(@RequestBody Vehicle vehicle) {
         vehicleService.saveVehicle(vehicle);
     }
@@ -40,7 +40,7 @@ public class VehicleController {
     }
 
     @PatchMapping("/{id}/status")
-    public Vehicle updateVehicleStatus(@PathVariable long id, @RequestParam Vehicle.Status status) {
+    public Vehicle updateVehicleStatus(@PathVariable long id, @RequestParam Vehicle.VehicleStatus status) {
         return vehicleService.updateVehicleStatus(id, status);
     }
 }

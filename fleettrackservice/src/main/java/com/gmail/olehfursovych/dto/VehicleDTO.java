@@ -1,7 +1,6 @@
 package com.gmail.olehfursovych.dto;
 
 import com.gmail.olehfursovych.entity.Vehicle;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,10 +19,11 @@ public class VehicleDTO {
     private String model;
     private Integer year;
     private String vehicleType;
+    @Builder.Default 
     private Vehicle.VehicleStatus status = Vehicle.VehicleStatus.Active;
 
 
     public enum VehicleStatus {
-        Active, Maintenance, Inactive
+        ACTIVE, MAINTENANCE, INACTIVE
     }
 }
